@@ -1,5 +1,5 @@
-#ifndef m_matrixHPP
-#define m_matrixHPP
+#ifndef MATRIX_HPP
+#define MATRIX_HPP
 
 #include <vector>
 #include <iostream>
@@ -21,7 +21,7 @@ public:
 
         auto operator[](size_t index) {
             if (index >= m_matrix.m_dimensions[MultiDimMatrix::dimensions_count - Dim]) {
-                throw std::out_of_range("Index out of range");
+                throw std::out_of_range("Invalid index");
             }
 
             size_t offset = m_indexOffset + index * m_matrix.m_strides[N - Dim];
